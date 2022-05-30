@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <OutputType>Library</OutputType>
@@ -11,13 +11,25 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Dalamud">
-      <HintPath>..\..\..\Dalamud\Dalamud.Updater\bin\Release\6.3.0.9\Dalamud.dll</HintPath>
+      <HintPath Condition="Exists('$(AppData)\XIVLauncher\addon\Hooks')">$(AppData)\XIVLauncher\addon\Hooks\dev\Dalamud.dll</HintPath>
+      <HintPath Condition="Exists('$(DalamudHooks)')">$(DalamudHooks)\Dalamud.dll</HintPath>
+      <HintPath Condition="Exists('..\Dalamud\Dalamud\bin\Debug')">..\Dalamud\Dalamud\bin\Debug\Dalamud.dll</HintPath>
+      <HintPath Condition="Exists('..\..\Dalamud\Dalamud\bin\Debug')">..\..\Dalamud\Dalamud\bin\Debug\Dalamud.dll</HintPath>
+      <Private>false</Private>
     </Reference>
     <Reference Include="ImGui.NET">
-      <HintPath>..\..\..\Dalamud\Dalamud.Updater\bin\Release\6.3.0.9\ImGui.NET.dll</HintPath>
+      <HintPath Condition="Exists('$(AppData)\XIVLauncher\addon\Hooks')">$(AppData)\XIVLauncher\addon\Hooks\dev\ImGui.NET.dll</HintPath>
+      <HintPath Condition="Exists('$(DalamudHooks)')">$(DalamudHooks)\ImGuiScene.dll</HintPath>
+      <HintPath Condition="Exists('..\Dalamud\Dalamud\bin\Debug')">..\Dalamud\Dalamud\bin\Debug\ImGui.NET.dll</HintPath>
+      <HintPath Condition="Exists('..\..\Dalamud\Dalamud\bin\Debug')">..\..\Dalamud\Dalamud\bin\Debug\ImGui.NET.dll</HintPath>
+      <Private>false</Private>
     </Reference>
     <Reference Include="ImGuiScene">
-      <HintPath>..\..\..\Dalamud\Dalamud.Updater\bin\Release\6.3.0.9\ImGuiScene.dll</HintPath>
+      <HintPath Condition="Exists('$(AppData)\XIVLauncher\addon\Hooks')">$(AppData)\XIVLauncher\addon\Hooks\dev\ImGuiScene.dll</HintPath>
+      <HintPath Condition="Exists('$(DalamudHooks)')">$(DalamudHooks)\ImGuiScene.dll</HintPath>
+      <HintPath Condition="Exists('..\Dalamud\Dalamud\bin\Debug')">..\Dalamud\Dalamud\bin\Debug\ImGuiScene.dll</HintPath>
+      <HintPath Condition="Exists('..\..\Dalamud\Dalamud\bin\Debug')">..\..\Dalamud\Dalamud\bin\Debug\ImGuiScene.dll</HintPath>
+      <Private>false</Private>
     </Reference>
   </ItemGroup>
 </Project>
