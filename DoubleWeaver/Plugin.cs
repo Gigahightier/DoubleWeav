@@ -1,4 +1,4 @@
-﻿using Dalamud.Game.Command;
+using Dalamud.Game.Command;
 using Dalamud.Plugin;
 using Dalamud.Hooking;
 using System;
@@ -167,7 +167,6 @@ namespace DoubleWeaver
                         {
                             actionRequestTime.Remove(actionEffect.ActionId);
                             elapsedTime = Math.Max(stopwatch.ElapsedMilliseconds / 2, elapsedTime);
-                            elapsedTime = Math.Max(elapsedTime - 50, 0);
                             laggingTime = Math.Min(Math.Min(elapsedTime, LastRTT), 300);
                         }
                         else
