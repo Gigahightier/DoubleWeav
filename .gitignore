@@ -1,4 +1,8 @@
-.vs/
+
 obj/
+
+.vs/
+
 bin/
-*.user
+
+Publish/
